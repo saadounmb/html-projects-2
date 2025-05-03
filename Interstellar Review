@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Movie Review: Interstellar</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+    }
+    header, nav, main, footer {
+      padding: 1rem;
+    }
+    header {
+      background-color: #222;
+      color: white;
+    }
+    nav a {
+      color: #ccc;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+    nav a:hover {
+      color: white;
+    }
+    section {
+      margin: 2rem;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 0.5rem;
+      text-align: left;
+    }
+    caption {
+      caption-side: top;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+    form {
+      margin-top: 2rem;
+    }
+    fieldset {
+      border: 1px solid #999;
+      padding: 1rem;
+    }
+    label {
+      display: block;
+      margin-top: 0.5rem;
+    }
+    #scrollTopBtn {
+      display: none;
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: #333;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    #scrollTopBtn:hover {
+      background-color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Movie Reviews Central</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Reviews</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section aria-labelledby="movie-title">
+      <h1 id="movie-title">Interstellar</h1>
+      <p>Release Date: <time datetime="2014-11-07">November 7, 2014</time></p>
+      <img src="https://upload.wikimedia.org/wikipedia/en/b/bc/Interstellar_film_poster.jpg" alt="Interstellar Poster" width="200">
+      <div>
+        <h2>Watch the Trailer</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/zSWdZVtXT7E" 
+          title="YouTube trailer of Interstellar" frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen></iframe>
+      </div>
+    </section>
+
+    <section>
+      <h2>Audience Reviews</h2>
+      <table>
+        <caption>Top Reviews for Interstellar</caption>
+        <thead>
+          <tr>
+            <th>Reviewer</th>
+            <th>Rating</th>
+            <th>Comment</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Alice</td>
+            <td>5/5</td>
+            <td>Mind-blowing visuals and storyline!</td>
+          </tr>
+          <tr>
+            <td>Ben</td>
+            <td>4.5/5</td>
+            <td>A little long, but brilliant concept.</td>
+          </tr>
+          <tr>
+            <td>Clara</td>
+            <td>5/5</td>
+            <td>My favorite sci-fi movie ever.</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="3">Total Reviews: 3</td>
+          </tr>
+        </tfoot>
+      </table>
+    </section>
+
+    <section>
+      <h2>Submit Your Review</h2>
+      <form>
+        <fieldset>
+          <legend>Review Form</legend>
+
+          <label for="name">Your Name:</label>
+          <input type="text" id="name" name="name" required aria-required="true">
+
+          <label for="rating">Rating:</label>
+          <select id="rating" name="rating">
+            <option value="1">1 - Poor</option>
+            <option value="2">2 - Okay</option>
+            <option value="3">3 - Good</option>
+            <option value="4">4 - Great</option>
+            <option value="5">5 - Excellent</option>
+          </select>
+
+          <label for="comment">Your Comment:</label>
+          <textarea id="comment" name="comment" rows="4" cols="50" required></textarea>
+
+          <label>
+            <input type="checkbox" name="terms" required>
+            I agree to the terms and conditions
+          </label>
+
+          <button type="submit">Submit Review</button>
+        </fieldset>
+      </form>
+    </section>
+
+    <section>
+      <h2>Soundtrack Preview</h2>
+      <audio controls loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+      </audio>
+    </section>
+  </main>
+
+  <button id="scrollTopBtn" aria-label="Scroll to top">↑ Top</button>
+
+  <footer>
+    <p>&copy; 2025 Movie Reviews Central</p>
+  </footer>
+
+  <script>
+    // Show scroll-to-top button only when scrolled down
+    const scrollTopBtn = document.getElementById("scrollTopBtn");
+    window.onscroll = function () {
+      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        scrollTopBtn.style.display = "block";
+      } else {
+        scrollTopBtn.style.display = "none";
+      }
+    };
+
+    // Smooth scroll to top
+    scrollTopBtn.onclick = function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+  </script>
+
+</body>
+</html>
