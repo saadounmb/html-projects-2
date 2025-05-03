@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Budget Tracker</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f7f9fc;
+    }
+    header {
+      background-color: #2c3e50;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    nav a {
+      color: #ccc;
+      margin: 0 15px;
+      text-decoration: none;
+    }
+    nav a:hover {
+      color: white;
+    }
+    .dashboard {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      margin: 2rem;
+    }
+    .card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      padding: 1rem;
+      width: 250px;
+      margin: 1rem;
+      text-align: center;
+    }
+    .card h3 {
+      margin: 0.5rem 0;
+    }
+    .card span {
+      font-size: 1.5rem;
+      font-weight: bold;
+      display: block;
+      margin-top: 0.5rem;
+    }
+    section {
+      margin: 2rem;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+      background-color: white;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 0.75rem;
+      text-align: left;
+    }
+    caption {
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+    form {
+      margin-top: 2rem;
+      background: white;
+      padding: 1rem;
+      border-radius: 8px;
+      max-width: 600px;
+    }
+    fieldset {
+      border: none;
+    }
+    label {
+      display: block;
+      margin-top: 1rem;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 0.5rem;
+      margin-top: 0.3rem;
+    }
+    button {
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      background: #2c3e50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #1a252f;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>My Budget Tracker</h1>
+    <nav>
+      <a href="#">Dashboard</a>
+      <a href="#">Expenses</a>
+      <a href="#">Settings</a>
+    </nav>
+  </header>
+
+  <div class="dashboard">
+    <div class="card">
+      💰
+      <h3>Total Income</h3>
+      <span id="incomeAmount">$2000</span>
+    </div>
+    <div class="card">
+      📉
+      <h3>Total Expenses</h3>
+      <span id="expenseAmount">$0</span>
+    </div>
+    <div class="card">
+      📊
+      <h3>Balance</h3>
+      <span id="balanceAmount">$2000</span>
+    </div>
+  </div>
+
+  <section>
+    <h2>Expense List</h2>
+    <table id="expenseTable">
+      <caption>All Expenses</caption>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Category</th>
+          <th>Description</th>
+          <th>Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Expenses will appear here -->
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="4">Track your expenses wisely!</td>
+        </tr>
+      </tfoot>
+    </table>
+  </section>
+
+  <section>
+    <h2>Add New Expense</h2>
+    <form id="expenseForm">
+      <fieldset>
+        <legend>Expense Details</legend>
+
+        <label for="date">Date:</label>
+        <input type="date" id="date" required>
+
+        <label for="category">Category:</label>
+        <select id="category" required>
+          <option value="">--Select--</option>
+          <option>Food</option>
+          <option>Transport</option>
+          <option>Bills</option>
+          <option>Shopping</option>
+          <option>Other</option>
+        </select>
+
+        <label for="description">Description:</label>
+        <input type="text" id="description" required>
+
+        <label for="amount">Amount ($):</label>
+        <input type="number" id="amount" required min="0">
+
+        <button type="submit">Add Expense</button>
+      </fieldset>
+    </form>
+  </section>
+
+  <script>
+    const form = document.getElementById('expenseForm');
+    const tableBody = document.querySelector('#expenseTable tbody');
+    const expenseAmountEl = document.getElementById('expenseAmount');
+    const balanceAmountEl = document.getElementById('balanceAmount');
+
+    let totalExpenses = 0;
+    const totalIncome = 2000;
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      // Get input values
+      const date = document.getElementById('date').value;
+      const category = document.getElementById('category').value;
+      const description = document.getElementById('description').value;
+      const amount = parseFloat(document.getElementById('amount').value);
+
+      if (!date || !category || !description || isNaN(amount)) {
+        alert('Please fill in all fields correctly.');
+        return;
+      }
+
+      // Create new table row
+      const row = document.createElement('tr');
+      row.innerHTML = `
+        <td>${date}</td>
+        <td>${category}</td>
+        <td>${description}</td>
+        <td>$${amount.toFixed(2)}</td>
+      `;
+      tableBody.appendChild(row);
+
+      // Update totals
+      totalExpenses += amount;
+      const balance = totalIncome - totalExpenses;
+
+      expenseAmountEl.textContent = `$${totalExpenses.toFixed(2)}`;
+      balanceAmountEl.textContent = `$${balance.toFixed(2)}`;
+
+      // Reset form
+      form.reset();
+    });
+  </script>
+
+</body>
+</html>
