@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Live Resume Editor</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      display: flex;
+      min-height: 100vh;
+      flex-wrap: wrap;
+    }
+
+    .editor {
+      flex: 1;
+      padding: 2rem;
+      background: #f5f5f5;
+      min-width: 300px;
+    }
+
+    .editor label {
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    .editor input,
+    .editor textarea {
+      width: 100%;
+      padding: 0.5rem;
+      margin-top: 0.25rem;
+      box-sizing: border-box;
+    }
+
+    .preview {
+      flex: 1;
+      padding: 2rem;
+      background: #fff;
+      border-left: 2px solid #ddd;
+      min-width: 300px;
+    }
+
+    .resume h1 {
+      margin-bottom: 0.2rem;
+    }
+
+    .resume h2 {
+      margin-top: 0;
+      color: #777;
+    }
+
+    button {
+      margin-top: 2rem;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+    }
+
+    @media print {
+      .editor, button {
+        display: none;
+      }
+      .preview {
+        border: none;
+        width: 100%;
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <form class="editor">
+      <h2>Edit Your Resume</h2>
+      <label>Full Name:
+        <input type="text" id="fullName" />
+      </label>
+
+      <label>Job Title:
+        <input type="text" id="jobTitle" />
+      </label>
+
+      <label>Summary:
+        <textarea id="summary"></textarea>
+      </label>
+
+      <label>Skills (comma-separated):
+        <input type="text" id="skills" />
+      </label>
+
+      <h3>Experience 1</h3>
+      <label>Company:
+        <input type="text" id="company1" />
+      </label>
+      <label>Title:
+        <input type="text" id="title1" />
+      </label>
+      <label>Duration:
+        <input type="text" id="duration1" />
+      </label>
+      <label>Description:
+        <textarea id="description1"></textarea>
+      </label>
+
+      <h3>Experience 2</h3>
+      <label>Company:
+        <input type="text" id="company2" />
+      </label>
+      <label>Title:
+        <input type="text" id="title2" />
+      </label>
+      <label>Duration:
+        <input type="text" id="duration2" />
+      </label>
+      <label>Description:
+        <textarea id="description2"></textarea>
+      </label>
+    </form>
+
+    <div class="preview">
+      <div class="resume">
+        <h1 id="previewName">Your Name</h1>
+        <h2 id="previewTitle">Job Title</h2>
+        <p id="previewSummary">Summary will appear here.</p>
+
+        <h3>Skills</h3>
+        <ul id="previewSkills"></ul>
+
+        <h3>Experience</h3>
+        <div id="previewExperience"></div>
+      </div>
+      <button onclick="window.print()">Download as PDF</button>
+    </div>
+  </div>
+
+  <script>
+    const fields = [
+      "fullName", "jobTitle", "summary", "skills",
+      "company1", "title1", "duration1", "description1",
+      "company2", "title2", "duration2", "description2"
+    ];
+
+    function updatePreview() {
+      document.getElementById("previewName").textContent = document.getElementById("fullName").value || "Your Name";
+      document.getElementById("previewTitle").textContent = document.getElementById("jobTitle").value || "Job Title";
+      document.getElementById("previewSummary").textContent = document.getElementById("summary").value || "Summary will appear here.";
+
+      const skills = document.getElementById("skills").value;
+      const skillsList = document.getElementById("previewSkills");
+      skillsList.innerHTML = "";
+      if (skills) {
+        skills.split(",").forEach(skill => {
+          const li = document.createElement("li");
+          li.textContent = skill.trim();
+          skillsList.appendChild(li);
+        });
+      }
+
+      const exp = document.getElementById("previewExperience");
+      exp.innerHTML = "";
+
+      for (let i = 1; i <= 2; i++) {
+        const company = document.getElementById(`company${i}`).value;
+        const title = document.getElementById(`title${i}`).value;
+        const duration = document.getElementById(`duration${i}`).value;
+        const description = document.getElementById(`description${i}`).value;
+
+        if (company || title || duration || description) {
+          const div = document.createElement("div");
+          div.innerHTML = `
+            <h4>${title || "Job Title"} at ${company || "Company"}</h4>
+            <p><em>${duration || "Duration"}</em></p>
+            <p>${description || ""}</p>
+          `;
+          exp.appendChild(div);
+        }
+      }
+
+      // Save to localStorage
+      fields.forEach(id => {
+        localStorage.setItem(id, document.getElementById(id).value);
+      });
+    }
+
+    fields.forEach(id => {
+      const el = document.getElementById(id);
+      el.value = localStorage.getItem(id) || "";
+      el.addEventListener("input", updatePreview);
+    });
+
+    updatePreview(); // Initial load
+  </script>
+</body>
+</html>
