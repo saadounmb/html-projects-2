@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Color Palette Generator</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: #111;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      padding: 2rem;
+    }
+
+    h1 {
+      margin-bottom: 1rem;
+    }
+
+    .palette {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 2rem;
+    }
+
+    .color-box {
+      width: 160px;
+      height: 200px;
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 1rem;
+      cursor: pointer;
+      position: relative;
+      transition: transform 0.2s ease;
+    }
+
+    .color-box:hover {
+      transform: scale(1.05);
+    }
+
+    .color-code {
+      font-weight: bold;
+      text-align: center;
+      user-select: none;
+    }
+
+    .lock-btn {
+      font-size: 1.2rem;
+      background: none;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      align-self: flex-end;
+    }
+
+    .generate-btn {
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      background: #fff;
+      color: #000;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.2s ease;
+    }
+
+    .generate-btn:hover {
+      background: #ddd;
+    }
+
+    .copied {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0, 0, 0, 0.6);
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      opacity: 0;
+      color: white;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .copied.active {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎨 Color Palette Generator</h1>
+  <div class="palette" id="palette"></div>
+  <button class="generate-btn" onclick="generatePalette()">Generate Palette</button>
+
+  <script>
+    const paletteContainer = document.getElementById("palette");
+    const NUM_COLORS = 5;
+
+    let palette = Array(NUM_COLORS).fill().map(() => ({
+      color: randomColor(),
+      locked: false
+    }));
+
+    function randomColor() {
+      const hex = "#" + Math.floor(Math.random() * 16777215).toString(16).padStart(6, "0");
+      return hex.toUpperCase();
+    }
+
+    function generatePalette() {
+      palette = palette.map(p =>
+        p.locked ? p : { color: randomColor(), locked: false }
+      );
+      renderPalette();
+    }
+
+    function renderPalette() {
+      paletteContainer.innerHTML = "";
+      palette.forEach((p, index) => {
+        const box = document.createElement("div");
+        box.className = "color-box";
+        box.style.backgroundColor = p.color;
+
+        // Choose black or white text based on brightness
+        const textColor = getContrastColor(p.color);
+
+        const lockBtn = document.createElement("button");
+        lockBtn.className = "lock-btn";
+        lockBtn.innerHTML = p.locked ? "🔒" : "🔓";
+        lockBtn.onclick = (e) => {
+          e.stopPropagation();
+          palette[index].locked = !palette[index].locked;
+          renderPalette();
+        };
+
+        const code = document.createElement("div");
+        code.className = "color-code";
+        code.textContent = p.color;
+        code.style.color = textColor;
+
+        const copied = document.createElement("div");
+        copied.className = "copied";
+        copied.textContent = "Copied!";
+
+        box.appendChild(lockBtn);
+        box.appendChild(code);
+        box.appendChild(copied);
+
+        box.onclick = () => {
+          navigator.clipboard.writeText(p.color);
+          copied.classList.add("active");
+          setTimeout(() => copied.classList.remove("active"), 1000);
+        };
+
+        paletteContainer.appendChild(box);
+      });
+    }
+
+    function getContrastColor(hex) {
+      const r = parseInt(hex.substr(1, 2), 16);
+      const g = parseInt(hex.substr(3, 2), 16);
+      const b = parseInt(hex.substr(5, 2), 16);
+      const brightness = (r * 299 + g * 587 + b * 114) / 1000;
+      return brightness > 150 ? "#000" : "#FFF";
+    }
+
+    // Spacebar shortcut
+    window.addEventListener("keydown", e => {
+      if (e.code === "Space") {
+        e.preventDefault();
+        generatePalette();
+      }
+    });
+
+    generatePalette(); // Initial render
+  </script>
+</body>
+</html>
