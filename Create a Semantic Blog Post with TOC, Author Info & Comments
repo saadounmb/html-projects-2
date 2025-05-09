@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How HTML Shapes the Web</title>
+</head>
+<body>
+  <a href="#main-content" class="sr-only">Skip to main content</a>
+
+  <header>
+    <h1>How HTML Shapes the Web</h1>
+    <section>
+      <img src="author.jpg" alt="Photo of Jane Smith" width="60" />
+      <p>
+        By <strong>Jane Smith</strong> &bull;
+        <time datetime="2025-05-09">May 9, 2025</time>
+      </p>
+    </section>
+  </header>
+
+  <nav aria-label="Table of Contents">
+    <h2>Table of Contents</h2>
+    <ul>
+      <li><a href="#introduction">1. Introduction</a></li>
+      <li><a href="#history">2. A Brief History</a></li>
+      <li><a href="#today">3. HTML Today</a></li>
+    </ul>
+  </nav>
+
+  <main id="main-content">
+    <article>
+      <section id="introduction">
+        <h2>1. Introduction</h2>
+        <p>
+          HTML, or <abbr title="HyperText Markup Language">HTML</abbr>, is the backbone of the web.
+          It defines the structure and content of every webpage we use.
+        </p>
+      </section>
+
+      <section id="history">
+        <h2>2. A Brief History</h2>
+        <p>
+          HTML was invented by Tim Berners-Lee in 1989. Its original purpose was to share documents
+          at CERN. Since then, it has evolved dramatically.
+        </p>
+
+        <figure>
+          <img src="early-web.png" alt="Screenshot of the first web browser" width="400" />
+          <figcaption>The first web browser: a window into the past.</figcaption>
+        </figure>
+
+        <blockquote>
+          "The Web as I envisaged it, we have not seen it yet. The future is still so much bigger than the past."
+          <cite> — Tim Berners-Lee</cite>
+        </blockquote>
+      </section>
+
+      <section id="today">
+        <h2>3. HTML Today</h2>
+        <p>
+          Modern HTML supports multimedia, responsive design, accessibility, and more. It’s no longer
+          just about text — it's about interaction and experience.
+        </p>
+      </section>
+    </article>
+
+    <aside aria-label="Related Articles">
+      <h3>Related Articles</h3>
+      <ul>
+        <li><a href="#">CSS: Styling the Web</a></li>
+        <li><a href="#">JavaScript: Powering Interactivity</a></li>
+      </ul>
+    </aside>
+
+    <section aria-labelledby="comments-title">
+      <h2 id="comments-title">Comments</h2>
+
+      <article>
+        <h3>Alex Rivera</h3>
+        <time datetime="2025-05-08T14:30">May 8, 2025 at 2:30 PM</time>
+        <p>This article really helped me understand the structure of modern HTML. Great work!</p>
+      </article>
+
+      <article>
+        <h3>Maria Tanaka</h3>
+        <time datetime="2025-05-08T18:10">May 8, 2025 at 6:10 PM</time>
+        <p>I loved the quote from Berners-Lee — powerful perspective!</p>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Blogify Media. All rights reserved.</p>
+  </footer>
+</body>
+</html>
