@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Classic Spaghetti Bolognese</title>
+</head>
+<body>
+  <header>
+    <h1>Classic Spaghetti Bolognese</h1>
+    <p>By <strong>Chef Lila Bennett</strong> — <time datetime="2025-05-09">May 9, 2025</time></p>
+  </header>
+
+  <nav aria-label="Page Navigation">
+    <ul>
+      <li><a href="#ingredients">Ingredients</a></li>
+      <li><a href="#steps">Steps</a></li>
+      <li><a href="#nutrition">Nutrition Facts</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <article aria-labelledby="recipe-intro">
+      <section id="recipe-intro">
+        <h2>Introduction</h2>
+        <p>
+          This hearty Italian dish brings together rich flavors and simple ingredients for a comforting classic.
+          Perfect for family dinners or meal prep!
+        </p>
+
+        <figure>
+          <img src="spaghetti-bolognese.jpg" alt="A bowl of spaghetti bolognese garnished with basil and parmesan" width="500" />
+          <figcaption>Rich, meaty sauce over tender spaghetti noodles — a timeless favorite.</figcaption>
+        </figure>
+      </section>
+
+      <section aria-labelledby="timing-info">
+        <h2 id="timing-info">Cooking Time</h2>
+        <ul>
+          <li>Prep Time: <time datetime="PT15M">15 minutes</time></li>
+          <li>Cook Time: <time datetime="PT45M">45 minutes</time></li>
+          <li>Total Time: <time datetime="PT1H">1 hour</time></li>
+        </ul>
+      </section>
+
+      <section id="ingredients" aria-labelledby="ingredients-heading">
+        <h2 id="ingredients-heading">Ingredients</h2>
+        <ul>
+          <li>400g spaghetti</li>
+          <li>500g ground beef</li>
+          <li>1 onion, chopped</li>
+          <li>2 garlic cloves, minced</li>
+          <li>800g canned tomatoes</li>
+          <li>2 tbsp tomato paste</li>
+          <li>1 tsp dried oregano</li>
+          <li>Fresh basil and grated parmesan (to serve)</li>
+        </ul>
+      </section>
+
+      <section id="steps" aria-labelledby="steps-heading">
+        <h2 id="steps-heading">Preparation Steps</h2>
+        <ol>
+          <li>Cook the spaghetti according to package instructions. Drain and set aside.</li>
+          <li>Sauté the onion and garlic in a large pan until softened.</li>
+          <li>Add ground beef and cook until browned.</li>
+          <li>Stir in tomato paste, canned tomatoes, and oregano. Simmer for 30 minutes.</li>
+          <li>Serve sauce over spaghetti. Garnish with fresh basil and parmesan.</li>
+        </ol>
+      </section>
+
+      <section aria-labelledby="difficulty-section">
+        <h2 id="difficulty-section">Difficulty</h2>
+        <label for="difficulty-meter">Level:</label>
+        <meter id="difficulty-meter" min="0" max="10" value="4">Moderate</meter>
+      </section>
+
+      <section id="nutrition" aria-labelledby="nutrition-heading">
+        <h2 id="nutrition-heading">Nutrition Facts (per serving)</h2>
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Nutrient</th>
+              <th scope="col">Amount</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Calories</th>
+              <td>560 kcal</td>
+            </tr>
+            <tr>
+              <th scope="row">Protein</th>
+              <td>28 g</td>
+            </tr>
+            <tr>
+              <th scope="row">Fat</th>
+              <td>22 g</td>
+            </tr>
+            <tr>
+              <th scope="row">Carbs</th>
+              <td>60 g</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </article>
+
+    <aside aria-labelledby="about-chef">
+      <h2 id="about-chef">About the Chef</h2>
+      <p>
+        Lila Bennett is a home cook turned culinary instructor with a passion for comfort food and Mediterranean flavors.
+      </p>
+    </aside>
+
+    <section aria-labelledby="fun-fact">
+      <h2 id="fun-fact">Did You Know?</h2>
+      <blockquote>
+        The original Bolognese sauce, known as "ragù alla bolognese," is traditionally served with tagliatelle, not spaghetti!
+      </blockquote>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 TasteCraft Kitchen. All rights reserved.</p>
+  </footer>
+</body>
+</html>
