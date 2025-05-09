@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SaaS Pricing Plans</title>
+</head>
+<body>
+  <header role="banner">
+    <h1 class="sr-only">Pricing Plans for Our SaaS Product</h1>
+    <nav role="navigation" aria-label="Main navigation">
+      <ul>
+        <li><a href="#plans">Plans</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="plans">
+    <section aria-labelledby="pricing-heading">
+      <h2 id="pricing-heading">Choose Your Plan</h2>
+
+      <picture>
+        <source media="(min-width: 768px)" srcset="plans-desktop.png" />
+        <img src="plans-mobile.png" alt="Illustration of pricing tiers" />
+      </picture>
+
+      <table role="table" aria-label="Pricing Plans Comparison Table">
+        <thead>
+          <tr>
+            <th scope="col">Feature</th>
+            <th scope="col">Basic</th>
+            <th scope="col">Pro</th>
+            <th scope="col">Enterprise</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Price</th>
+            <td>$10/mo</td>
+            <td>$25/mo</td>
+            <td>Contact Us</td>
+          </tr>
+          <tr>
+            <th scope="row">Users</th>
+            <td>1 User</td>
+            <td>Up to 5 Users</td>
+            <td>Unlimited</td>
+          </tr>
+          <tr>
+            <th scope="row">Storage</th>
+            <td>5GB</td>
+            <td>50GB</td>
+            <td>1TB</td>
+          </tr>
+          <tr>
+            <th scope="row">Support</th>
+            <td>Email Support</td>
+            <td>24/7 Chat</td>
+            <td>Dedicated Manager</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <section aria-labelledby="select-plan-heading">
+        <h3 id="select-plan-heading">Select a Plan</h3>
+        <article aria-label="Basic Plan">
+          <h4>Basic</h4>
+          <p>Great for individuals just getting started.</p>
+          <button>Select Plan</button>
+        </article>
+
+        <article aria-label="Pro Plan">
+          <h4>Pro</h4>
+          <p>Perfect for small teams with growing needs.</p>
+          <button>Select Plan</button>
+        </article>
+
+        <article aria-label="Enterprise Plan">
+          <h4>Enterprise</h4>
+          <p>Custom solutions for large businesses.</p>
+          <button>Select Plan</button>
+        </article>
+      </section>
+    </section>
+
+    <section id="testimonials" aria-labelledby="testimonials-heading">
+      <h2 id="testimonials-heading">What Our Users Say</h2>
+      <blockquote>
+        "This platform changed how we work. It's fast, reliable, and easy to use."
+        <cite>— Jane D., Tech Lead</cite>
+      </blockquote>
+      <blockquote>
+        "Customer support is phenomenal. They really care about user success."
+        <cite>— Mark S., Founder</cite>
+      </blockquote>
+    </section>
+
+    <section id="faq" aria-labelledby="faq-heading">
+      <h2 id="faq-heading">Frequently Asked Questions</h2>
+
+      <details>
+        <summary>Can I cancel anytime?</summary>
+        <p>Yes! You can cancel or change your plan at any time.</p>
+      </details>
+
+      <details>
+        <summary>Do you offer a free trial?</summary>
+        <p>We offer a 14-day free trial with access to all features.</p>
+      </details>
+    </section>
+  </main>
+
+  <footer id="contact" role="contentinfo">
+    <p>Contact us at <a href="mailto:support@saascompany.com">support@saascompany.com</a></p>
+  </footer>
+</body>
+</html>
