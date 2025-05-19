@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Spaghetti Carbonara Recipe</title>
+</head>
+<body>
+
+  <header>
+    <h1>Spaghetti Carbonara</h1>
+    <p>A quick, creamy, and delicious Italian pasta dish you can make in under 30 minutes.</p>
+  </header>
+
+  <main>
+
+    <section>
+      <h2>Time</h2>
+      <p><strong>Prep Time:</strong> 10 minutes</p>
+      <p><strong>Cook Time:</strong> 15 minutes</p>
+    </section>
+
+    <section>
+      <h2>Ingredients</h2>
+      <ul>
+        <li>200g spaghetti</li>
+        <li>100g pancetta or bacon</li>
+        <li>2 eggs</li>
+        <li>50g grated Parmesan cheese</li>
+        <li>2 cloves garlic (optional)</li>
+        <li>Salt and black pepper</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Instructions</h2>
+      <ol>
+        <li>Boil the spaghetti in salted water until al dente.</li>
+        <li>In a pan, cook the pancetta until crispy. Add garlic if using.</li>
+        <li>In a bowl, beat the eggs and mix in the Parmesan.</li>
+        <li>Drain the pasta and return it to the pot (off the heat).</li>
+        <li>Quickly stir in the pancetta and egg mixture, allowing the heat from the pasta to cook the eggs and create a creamy sauce.</li>
+        <li>Season with salt and freshly ground black pepper. Serve immediately.</li>
+      </ol>
+    </section>
+
+    <aside>
+      <blockquote>
+        Tip: Don't put the pot back on the stove after adding the eggs — you’ll scramble them instead of getting a creamy sauce!
+      </blockquote>
+    </aside>
+
+    <section>
+      <h2>Nutritional Facts (Approx.)</h2>
+      <ul>
+        <li>Calories: 550</li>
+        <li>Protein: 22g</li>
+        <li>Carbs: 60g</li>
+        <li>Fat: 25g</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Recipe by Chef Marie © 2025</p>
+  </footer>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
