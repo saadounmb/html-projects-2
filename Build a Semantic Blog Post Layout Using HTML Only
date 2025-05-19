@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Blog Post</title>
+</head>
+<body>
+
+  <article>
+    <header>
+      <h1>Why Learning HTML Is a Superpower</h1>
+      <p>By <strong>Alice Developer</strong> | <time datetime="2025-05-19">May 19, 2025</time></p>
+    </header>
+
+    <section>
+      <p>HTML is the backbone of every website. It gives structure to the content we see online, from simple blogs to complex web apps. If you're just starting in web development, HTML is the perfect place to begin.</p>
+
+      <p>One of the best things about HTML is that it's easy to learn. With just a few elements, you can create a complete web page. Whether you're building a personal portfolio or a professional blog, knowing HTML puts you in control.</p>
+
+      <blockquote>
+        “Give me HTML and I will build the web.” — A wise coder
+      </blockquote>
+
+      <h2>Top Reasons to Learn HTML</h2>
+      <ul>
+        <li>It’s beginner-friendly</li>
+        <li>It’s essential for web development</li>
+        <li>It helps you understand how websites work</li>
+      </ul>
+    </section>
+
+    <footer>
+      <h3>Comments</h3>
+      <p><strong>Bob:</strong> Great post! I’m starting to love HTML already.</p>
+    </footer>
+  </article>
