@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Spaghetti Bolognese Recipe</title>
+</head>
+<body>
+
+  <header>
+    <h1>Spaghetti Bolognese</h1>
+    <p>A classic Italian pasta dish that's perfect for dinner!</p>
+  </header>
+
+  <section>
+    <figure>
+      <img src="https://via.placeholder.com/400x250.png?text=Spaghetti+Bolognese" alt="A plate of Spaghetti Bolognese">
+      <figcaption>Delicious homemade spaghetti bolognese</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>Ingredients</h2>
+    <ul>
+      <li>200g spaghetti</li>
+      <li>2 tbsp olive oil</li>
+      <li>1 onion, chopped</li>
+      <li>2 garlic cloves, minced</li>
+      <li>400g minced beef</li>
+      <li>400g canned tomatoes</li>
+      <li>Salt and pepper to taste</li>
+      <li>Grated parmesan (optional)</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Instructions</h2>
+    <ol>
+      <li>Boil the spaghetti according to package instructions.</li>
+      <li>Heat olive oil in a pan and sauté onion and garlic.</li>
+      <li>Add minced beef and cook until browned.</li>
+      <li>Stir in canned tomatoes and simmer for 15 minutes.</li>
+      <li>Season with salt and pepper.</li>
+      <li>Drain spaghetti and mix with the sauce.</li>
+      <li>Serve with grated parmesan on top.</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Cooking Time</h2>
+    <table border="1">
+      <tr>
+        <th>Prep Time</th>
+        <th>Cook Time</th>
+        <th>Total Time</th>
+      </tr>
+      <tr>
+        <td>10 minutes</td>
+        <td>20 minutes</td>
+        <td>30 minutes</td>
+      </tr>
+    </table>
+  </section>
+
+  <footer>
+    <p>Looking for more recipes? Check out 
+      <a href="https://www.allrecipes.com/" target="_blank">AllRecipes</a>.
+    </p>
+  </footer>
+
+</body>
+</html>
