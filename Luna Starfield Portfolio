@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Luna Starfield - Cosmic Developer Portfolio</title>
+</head>
+<body>
+
+  <header>
+    <h1>Luna Starfield</h1>
+    <p>Intergalactic Web Developer from the Andromeda Galaxy. I build websites that shine like stars ✨.</p>
+  </header>
+
+  <section>
+    <img src="https://via.placeholder.com/200x200.png?text=Luna+Starfield" alt="Portrait of Luna Starfield">
+  </section>
+
+  <section>
+    <h2>Skills</h2>
+    <ul>
+      <li>Galactic HTML5</li>
+      <li>Cosmic CSS3</li>
+      <li>JavaScript Meteor APIs</li>
+      <li>Astro UX Design</li>
+      <li>Time-Travel Debugging</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Hero Stats</h2>
+    <table border="1">
+      <tr>
+        <th>Stat</th>
+        <th>Level</th>
+      </tr>
+      <tr>
+        <td>Speed of Coding</td>
+        <td>9001</td>
+      </tr>
+      <tr>
+        <td>Bug Resistance</td>
+        <td>99%</td>
+      </tr>
+      <tr>
+        <td>Framework Knowledge</td>
+        <td>All Known and Unknown</td>
+      </tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>Projects</h2>
+    <figure>
+      <img src="https://via.placeholder.com/300x180.png?text=Star+Portfolio" alt="Screenshot of Star Portfolio Project">
+      <figcaption>🌠 Star Portfolio - A glowing site for other heroes.</figcaption>
+    </figure>
+    <figure>
+      <img src="https://via.placeholder.com/300x180.png?text=Planet+Shop" alt="Screenshot of Planet Shop Project">
+      <figcaption>🪐 Planet Shop - E-commerce for planetary needs.</figcaption>
+    </figure>
+    <figure>
+      <img src="https://via.placeholder.com/300x180.png?text=Time+Tracker" alt="Screenshot of Time Tracker Project">
+      <figcaption>🕒 Time Tracker - Multidimensional productivity app.</figcaption>
+    </figure>
+  </section>
+
+  <footer>
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:luna@cosmos.dev">luna@cosmos.dev</a></p>
+    <p>More cosmic vibes at <a href="https://example.com" target="_blank">Luna's Galaxy</a></p>
+  </footer>
+
+</body>
+</html>
